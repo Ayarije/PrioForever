@@ -2,22 +2,20 @@
 // @name         PrioForever
 // @namespace    prioforever
 // @version      2024-09-16
-// @description  Mange en prio tt les jours
+// @description  Manger en prio tous les jours
 // @author       Kilt
 // @match        *://*.index-education.net/pronote/*
 // @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
-// @grant        none
+// @grant        GM_xmlhttpRequest
 // ==/UserScript==
 
 function initMobile() {
     // Get all the courses of the day
     var liste = document.querySelectorAll(".liste-cours > li");
     for (var i = 0; i < liste.length; i++) { // iterate over all courses
-        
         // get the hours of the course
         var li = liste[i];
         var hours = li.querySelectorAll(".container-heures div");
-        
         // if the hours are 12h10 and 13h55
         if (hours.length == 2 && hours[0].textContent == "12h10" && hours[1].textContent == "13h55") {
             // add the class to the schedule
@@ -32,7 +30,7 @@ function initMobile() {
             liste_cours.insertBefore(classe, li.nextSibling);
             hours[1].textContent = "13h00"; // change the hours to 13h00
             break;
-        } 
+        }
     }
 }
 setInterval(initMobile, 1000);
