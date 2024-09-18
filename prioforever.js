@@ -25,14 +25,28 @@ function initMobile() {
             classe.className = "flex-contain";
             classe.setAttribute("tabindex", "0");
 
-            classe.innerHTML = '<span class="sr-only">de 12h10 à 13h00 ACCOMPAGNEMT. PERSO.</span><div class="container-heures" aria-hidden="true"><div>13h00</div><div>13h55</div></div><div class="trait-matiere" style="background-color :#EC6719;"></div><ul class="container-cours "><li class="libelle-cours flex-contain" aria-hidden="true">ACCOMPAGNEMT. PERSO.</li><li>DU PEYRAT A.</li><li>C129 MATHS</li></ul>';
+            classe.innerHTML = '<span class="sr-only">de 13h00 à 13h55 ACCOMPAGNEMT. PERSO.</span><div class="container-heures" aria-hidden="true"><div>13h00</div><div>13h55</div></div><div class="trait-matiere" style="background-color :#EC6719;"></div><ul class="container-cours "><li class="libelle-cours flex-contain" aria-hidden="true">ACCOMPAGNEMT. PERSO.</li><li>DU PEYRAT A.</li><li>C129 MATHS</li></ul>';
 
             liste_cours.insertBefore(classe, li.nextSibling);
             hours[1].textContent = "13h00"; // change the hours to 13h00
             break;
         }
         else if (hours.length == 2 && hours[0].textContent == "13h00" && hours[1].textContent == "13h55" && li.classList.contains("cours-annule")) {
-            li.innerHTML = ""
+            li.innerHTML = '<span class="sr-only">de 12h10 à 13h55 Pause Déjeuner</span><div class="container-heures" aria-hidden="true"><div>12h10</div><div>13h00</div></div><div class="trait-matiere"></div><ul class="container-cours demi-pension" aria-label="Pause Déjeuner"><li class="libelle-cours flex-contain" aria-hidden="true"></li></ul>'
+            li.classList.add("greyed");
+
+            // add the class to the schedule
+            let liste_cours = document.querySelector(".liste-cours");
+
+            let classe = document.createElement("li");
+            classe.className = "flex-contain";
+            classe.setAttribute("tabindex", "0");
+
+            classe.innerHTML = '<span class="sr-only">de 13h00 à 13h55 ACCOMPAGNEMT. PERSO.</span><div class="container-heures" aria-hidden="true"><div>13h00</div><div>13h55</div></div><div class="trait-matiere" style="background-color :#EC6719;"></div><ul class="container-cours "><li class="libelle-cours flex-contain" aria-hidden="true">ACCOMPAGNEMT. PERSO.</li><li>DU PEYRAT A.</li><li>C129 MATHS</li></ul>';
+
+            liste_cours.insertBefore(classe, li.nextSibling);
+            hours[1].textContent = "13h00"; // change the hours to 13h00
+            break;
         }
     }
 }
