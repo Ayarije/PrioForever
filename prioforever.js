@@ -18,7 +18,7 @@ function initMobile() {
         var hours = li.querySelectorAll(".container-heures div");
         // if the hours are 12h10 and 13h55
         if (hours.length == 2 && hours[0].textContent == "12h10" && hours[1].textContent == "13h55") {
-            console.log("basic executed...");
+            console.log("basic executed");
             // add the class to the schedule
             let liste_cours = document.querySelector(".liste-cours");
 
