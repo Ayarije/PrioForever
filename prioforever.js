@@ -18,6 +18,7 @@ function initMobile() {
         var hours = li.querySelectorAll(".container-heures div");
         // if the hours are 12h10 and 13h55
         if (hours.length == 2 && hours[0].textContent == "12h10" && hours[1].textContent == "13h55") {
+            console.log("basic executed...");
             // add the class to the schedule
             let liste_cours = document.querySelector(".liste-cours");
 
@@ -32,6 +33,7 @@ function initMobile() {
             break;
         }
         else if (hours.length == 1 && hours[0].textContent == "12h10" && li.classList.contains("cours-annule")) {
+            console.log("cours-annule executed");
             li.innerHTML = '<span class="sr-only">de 12h10 à 13h00 Pause Déjeuner</span><div class="container-heures" aria-hidden="true"><div>12h10</div><div>13h00</div></div><div class="trait-matiere"></div><ul class="container-cours demi-pension" aria-label="Pause Déjeuner"><li class="libelle-cours flex-contain" aria-hidden="true"></li></ul>'
             li.classList.add("greyed");
 
