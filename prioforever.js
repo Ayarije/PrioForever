@@ -17,7 +17,7 @@ function initMobile() {
         var li = liste[i];
         var hours = li.querySelectorAll(".container-heures div");
         // if the hours are 12h10 and 13h55
-        if (hours.length == 2 && hours[0].textContent == "12h10" && hours[1].textContent == "13h55") {
+        if ((hours.length == 2 && hours[0].textContent == "12h10" && hours[1].textContent == "13h55") || (hours.length == 1 && hours[0].textContent == "12h10")) {
             // add the class to the schedule
             let liste_cours = document.querySelector(".liste-cours");
 
@@ -30,6 +30,9 @@ function initMobile() {
             liste_cours.insertBefore(classe, li.nextSibling);
             hours[1].textContent = "13h00"; // change the hours to 13h00
             break;
+        }
+        else if (hours.length == 2 && hours[0].textContent == "13h00" && hours[1].textContent == "13h55" && li.classList.contains("cours-annule")) {
+            li.innerHTML = ""
         }
     }
 }
