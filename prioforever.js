@@ -31,7 +31,7 @@ function initMobile() {
             hours[1].textContent = "13h00"; // change the hours to 13h00
             break;
         }
-        else if (hours.length == 2 && hours[0].textContent == "13h00" && hours[1].textContent == "13h55" && li.classList.contains("cours-annule")) {
+        else if (hours.length == 2 && hours[0].textContent == "12h10" && hours[1].textContent == "13h00" && li.classList.contains("cours-annule")) {
             li.innerHTML = '<span class="sr-only">de 12h10 à 13h55 Pause Déjeuner</span><div class="container-heures" aria-hidden="true"><div>12h10</div><div>13h00</div></div><div class="trait-matiere"></div><ul class="container-cours demi-pension" aria-label="Pause Déjeuner"><li class="libelle-cours flex-contain" aria-hidden="true"></li></ul>'
             li.classList.add("greyed");
 
